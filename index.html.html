@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz Aniversário 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:#333;
+text-align:center;
+}
+
+/* CAPA */
+
+.capa{
+height:100vh;
+background-image: url("img/joelma.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-shadow:2px 2px 10px black;
+}
+
+.capa h1{
+font-size:60px;
+animation: aparecer 2s ease;
+}
+
+.capa p{
+font-size:22px;
+margin-top:10px;
+}
+
+/* CONTEUDO */
+
+.container{
+padding:40px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+p{
+line-height:1.6;
+margin-top:20px;
+}
+
+/* GALERIA */
+
+.galeria{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:40px;
+}
+
+.galeria img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.08);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* LIGHTBOX */
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer{
+
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* CONFETE */
+
+.confete{
+position:fixed;
+top:-10px;
+width:10px;
+height:10px;
+background:red;
+animation:cair 5s linear infinite;
+}
+
+@keyframes cair{
+
+0%{
+transform:translateY(-10px) rotate(0);
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+}
+
+}
+
+/* RESPONSIVO */
+
+@media (max-width:600px){
+
+.capa h1{
+font-size:40px;
+}
+
+.capa p{
+font-size:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- CAPA -->
+
+<section class="capa">
+
+<h1>🥳 Feliz Aniversário 🥳</h1>
+<p>Um dia especial para uma pessoa especial 💖</p>
+
+</section>
+
+
+<!-- TEXTO -->
+
+<div class="container">
+
+<h2>Uma mensagem para você 🎂</h2>
+
+<p>
+
+Hoje é um dia especial, o dia em que celebramos mais um ano da sua vida!  
+Que este novo ciclo seja cheio de conquistas, saúde, felicidade e momentos inesquecíveis.  
+
+Que você continue realizando seus sonhos e que nunca falte motivos para sorrir.  
+Aproveite muito seu dia ao lado das pessoas que te amam.
+
+Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
+
+</p>
+
+
+<h2>Galeria de Momentos 📸</h2>
+
+<div class="galeria">
+
+<img src="img/amigos.png" onclick="abrir(this)">
+<img src="img/eu..ela.jpg" onclick="abrir(this)">
+<img src="img/eueela.jpg" onclick="abrir(this)">
+<img src="img/image1.png" onclick="abrir(this)">
+<img src="img/nos dois.jpg" onclick="abrir(this)">
+<img src="img/pedro.png" onclick="abrir(this)">
+<img src="img/WhatsApp Image 2026-03-05 at 16.15.30.jpeg" onclick="abrir(this)">
+<img src="img/WhatsApp Image 2026-03-05 at 16.17.56.jpeg" onclick="abrir(this)">
+
+</div>
+
+</div>
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" onclick="fechar()">
+<img id="img-grande">
+</div>
+
+
+<script>
+
+function abrir(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("img-grande").src=img.src;
+}
+
+function fechar(){
+document.getElementById("lightbox").style.display="none";
+}
+
+/* GERAR CONFETES */
+
+for(let i=0;i<40;i++){
+
+let confete=document.createElement("div");
+confete.classList.add("confete");
+
+confete.style.left=Math.random()*100+"%";
+confete.style.background="hsl("+Math.random()*360+"deg,70%,60%)";
+confete.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(confete);
+
+}
+
+</script>
+
+</body>
+</html>
