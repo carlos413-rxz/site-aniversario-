@@ -61,10 +61,31 @@ line-height:1.6;
 margin-top:20px;
 }
 
+/* BOTÃO SURPRESA */
+
+.botaoSurpresa{
+padding:15px 35px;
+font-size:18px;
+background:#ff4d6d;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+margin-top:50px;
+}
+
+.botaoSurpresa:hover{
+transform:scale(1.1);
+background:#ff1f4b;
+}
+
 /* VIDEO FINAL */
 
 .videoMensagem{
 margin-top:60px;
+display:none;
 }
 
 .videoMensagem video{
@@ -230,13 +251,11 @@ font-size:18px;
 
 </section>
 
-
 <div class="container">
 
 <h2>Uma mensagem para você 🎂</h2>
 
 <p>
-
 Hoje é um dia especial, o dia em que celebramos mais um ano da sua vida!  
 Que este novo ciclo seja cheio de conquistas, saúde, felicidade e momentos inesquecíveis.  
 
@@ -244,9 +263,7 @@ Que você continue realizando seus sonhos e que nunca falte motivos para sorrir.
 Aproveite muito seu dia ao lado das pessoas que te amam.
 
 Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
-
 </p>
-
 
 <h2>Galeria de Momentos 📸</h2>
 
@@ -260,17 +277,10 @@ Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
 <img src="img/pedro.png" onclick="abrir(this)">
 <img src="img/WhatsApp Image 2026-03-05 at 16.15.30.jpeg" onclick="abrir(this)">
 <img src="img/WhatsApp Image 2026-03-05 at 16.17.56.jpeg" onclick="abrir(this)">
-<img src="img/joelma- (1).jpeg" onclick="abrir(this)">
-<img src="img/joelma- (2).jpeg" onclick="abrir(this)">
-<img src="img/joelma- (3).jpeg" onclick="abrir(this)">
-<img src="img/joelma- (4).jpeg" onclick="abrir(this)">
-<img src="img/joelma- (5).jpeg" onclick="abrir(this)">
-<img src="img/joelma- (6).jpeg" onclick="abrir(this)">
 
 </div>
 
-
-<h2> 💖 Recados especiais 💌</h2>
+<h2>Recados especiais 💌</h2>
 
 <div class="recados">
 
@@ -288,6 +298,11 @@ Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
 
 </div>
 
+<!-- BOTÃO SURPRESA -->
+
+<button class="botaoSurpresa" onclick="mostrarVideo()">
+🎁 Clique aqui para uma surpresa
+</button>
 
 <!-- VIDEO NO FINAL -->
 
@@ -308,16 +323,13 @@ Seu navegador não suporta vídeo.
 
 </div>
 
-
 <div id="lightbox" onclick="fechar()">
 <img id="img-grande">
 </div>
 
-
 <div id="recadoBox" class="recadoBox" onclick="fecharRecado()">
 <div class="recadoConteudo" id="textoRecado"></div>
 </div>
-
 
 <script>
 
@@ -339,7 +351,7 @@ texto="Desde que você entrou na minha vida, tudo ficou mais bonito. Feliz anive
 }
 
 if(id=="r2"){
-texto="É Joelma Chaene, está fazendo mais um ano de vida em, te conheco a pouco tempo mais ja é o suficiente pra eu reconhecer o quao incrivel voce é, a gente tem nossos problemas, discussoes, mais saiba que você tem toda a minha admiraçao e respeito por essa mulher que voce é ,está para fazer 6 meses que conheco vc , o tempo passa rapido de mais, mais so tenho que agradecer a vc por tudo que vc é e tudo que voce faz , te desejo felicidades e muita benção na sua vida , sei n sou muito bom com palavras mais ta certo kkk. feliz aniversario e tudo de bom pra voce, que Deus abençoe sua vida, voce ainda tem muito tempo pela frente, entao aproveita o maximo que der e seja feliz 💖 te amo viu mulher, maluca💖💖💖  🎂";
+texto="Que seu dia seja cheio de alegria, amor e momentos inesquecíveis. Você merece tudo de melhor! 🎂";
 }
 
 if(id=="r3"){
@@ -353,6 +365,20 @@ document.getElementById("recadoBox").style.display="flex";
 
 function fecharRecado(){
 document.getElementById("recadoBox").style.display="none";
+}
+
+/* MOSTRAR VIDEO E DESCER A PÁGINA */
+
+function mostrarVideo(){
+
+let video = document.querySelector(".videoMensagem");
+
+video.style.display="block";
+
+video.scrollIntoView({
+behavior:"smooth"
+});
+
 }
 
 /* CONFETES */
@@ -373,5 +399,4 @@ document.body.appendChild(confete);
 </script>
 
 </body>
-
 </html>
