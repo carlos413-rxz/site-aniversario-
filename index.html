@@ -61,6 +61,20 @@ line-height:1.6;
 margin-top:20px;
 }
 
+/* VIDEO FINAL */
+
+.videoMensagem{
+margin-top:60px;
+}
+
+.videoMensagem video{
+width:100%;
+max-width:650px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+margin-top:20px;
+}
+
 /* GALERIA */
 
 .galeria{
@@ -209,8 +223,6 @@ font-size:18px;
 
 <body>
 
-<!-- CAPA -->
-
 <section class="capa">
 
 <h1>🥳 Feliz Aniversário 🥳</h1>
@@ -248,6 +260,12 @@ Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
 <img src="img/pedro.png" onclick="abrir(this)">
 <img src="img/WhatsApp Image 2026-03-05 at 16.15.30.jpeg" onclick="abrir(this)">
 <img src="img/WhatsApp Image 2026-03-05 at 16.17.56.jpeg" onclick="abrir(this)">
+<img src="img/joelma- (1).jpeg" onclick="abrir(this)">
+<img src="img/joelma- (2).jpeg" onclick="abrir(this)">
+<img src="img/joelma- (3).jpeg" onclick="abrir(this)">
+<img src="img/joelma- (4).jpeg" onclick="abrir(this)">
+<img src="img/joelma- (5).jpeg" onclick="abrir(this)">
+<img src="img/joelma- (6).jpeg" onclick="abrir(this)">
 
 </div>
 
@@ -270,17 +288,31 @@ Que Deus abençoe sua vida e que venham muitos anos de alegria pela frente! 🎉
 
 </div>
 
+
+<!-- VIDEO NO FINAL -->
+
+<div class="videoMensagem">
+
+<h2>🎥 Um recado final para você</h2>
+
+<p>
+Antes de terminar essa página, tem mais um recado especial que gravei para você 💖
+</p>
+
+<video controls>
+<source src="video/recado.mp4" type="video/mp4">
+Seu navegador não suporta vídeo.
+</video>
+
 </div>
 
+</div>
 
-<!-- LIGHTBOX -->
 
 <div id="lightbox" onclick="fechar()">
 <img id="img-grande">
 </div>
 
-
-<!-- POPUP RECADO -->
 
 <div id="recadoBox" class="recadoBox" onclick="fecharRecado()">
 <div class="recadoConteudo" id="textoRecado"></div>
@@ -297,8 +329,6 @@ document.getElementById("img-grande").src=img.src;
 function fechar(){
 document.getElementById("lightbox").style.display="none";
 }
-
-/* RECADOS */
 
 function mostrarRecado(id){
 
